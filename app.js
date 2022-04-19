@@ -7,6 +7,7 @@ const Blog = require('./models/blog.js');
 // const { get } = require('https');
 // const morgan = require('morgan');
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(express.urlencoded({ extended: true}));
 
@@ -14,7 +15,7 @@ const dbURI = 'mongodb://Selva:Selva03@blog-shard-00-00.5ihud.mongodb.net:27017,
 mongoose.connect(dbURI)
     .then(()=>{
         console.log('DataBase Connected');
-        app.listen(3000);
+        app.listen(PORT);
     })
     .catch((e)=>{
         console.log(e);
