@@ -16,7 +16,7 @@ const dbURI = 'mongodb://Selva:Selva03@blog-shard-00-00.5ihud.mongodb.net:27017,
 mongoose.connect(dbURI)
     .then(()=>{
         console.log('DataBase Connected');
-        app.listen(PORT || url );
+        app.listen( url );
     })
     .catch((e)=>{
         console.log(e);
