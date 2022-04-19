@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand{
+        color: white;
+}
+
+nav{
+    margin-bottom: 30px !important;
+}
+.card{
+    margin-bottom: 15px;
+}
+
+.btn-danger{
+    /* margin-top: 20px; */
+    margin-left: 84%;
+    position: relative;
+    top: -35px;
+}
+
+.card:hover{
+    transform: scale(1.02);
+}
+.single-blog{
+    text-decoration: none;
+    color: black;
+}
+
+.blog-body{
+    font-family: Poppins;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.single-blog:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.single-blog>h3:hover{
+    color: teal;
+}
+.single-blog>p:hover{
+    cursor: default;
+}
+.create{
+    width:70% !important;
+    position: relative;
+    margin: 0 auto;
+}

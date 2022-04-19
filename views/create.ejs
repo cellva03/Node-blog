@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs')  %> 
+<style>
+    .navbar-brand{
+        color: white;
+    }
+    nav{
+        margin-bottom: 30px !important;
+    }
+    .create{
+        width:70%;
+        position: relative;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <%- include('./partials/nav.ejs')  %> 
+    
+    <div class="create content">
+        <form action="/blogs" method='POST'>
+            <div class="mb-3">
+                <label class="form-label">Blog Title</label>
+                <input type="text" class="form-control" name='title' placeholder="Blog Title">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Blog Snippets</label>
+                <input type="text" class="form-control" name='snippet' placeholder="Blog Title">
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Blog Body</label>
+                <textarea class="form-control"rows="3" name='body'></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <%- include('./partials/footer.ejs')  %>
+</body>
+</html>

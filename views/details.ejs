@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs')  %>
+
+<body>
+    <%- include('./partials/nav.ejs')  %>
+    <div class="details content container">
+        <h2><%= blog.title %>
+            <button type="button" data-del="<%= blog._id %> " class="btn btn-danger">Delete</button>
+        </h2>
+        <h4><%= blog.snippet %> </h4><br><br>
+        <pre class='blog-body'><%=blog.body%> 
+        </pre>
+    </div>
+    <%- include('./partials/footer.ejs')  %>
+    <script>
+        const btn = document.querySelector('button');
+        btn.addEventListener('click',()=>{
+            const endpoint = `/blogs/${btn.dataset.del}`
+            // console.log(endpoint); 
+            fetch(endpoint,{
+                method: 'DELETE'
+            })
+            .then((res)=> res.json())
+            .then((data)=>location.href= data.redirect)
+            .catch(e=> console.log(e))
+        })
+    </script>
+</body>
+</html>
