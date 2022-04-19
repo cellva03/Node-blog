@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.urlencoded({ extended: true}));
 
-const dbURI = 'mongodb://Selva:Selva03@blog-shard-00-00.5ihud.mongodb.net:27017,blog-shard-00-01.5ihud.mongodb.net:27017,blog-shard-00-02.5ihud.mongodb.net:27017/selva-blog?ssl=true&replicaSet=atlas-pi94wt-shard-0&authSource=admin&retryWrites=true&w=majority';
+const dbURI = process.env.MANGODB_URI;
 mongoose.connect(dbURI)
     .then(()=>{
         console.log('DataBase Connected');
