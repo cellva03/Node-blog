@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blog.js');
 // const { get } = require('https');
 // const morgan = require('morgan');
+const url = 'https://inspiring-chimera-dd4141.netlify.app';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -15,7 +16,7 @@ const dbURI = 'mongodb://Selva:Selva03@blog-shard-00-00.5ihud.mongodb.net:27017,
 mongoose.connect(dbURI)
     .then(()=>{
         console.log('DataBase Connected');
-        app.listen(PORT);
+        app.listen(PORT || url );
     })
     .catch((e)=>{
         console.log(e);
